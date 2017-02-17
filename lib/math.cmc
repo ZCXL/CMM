@@ -1,0 +1,61 @@
+* CMM Compilation to CMM code
+* ./math.cmc
+  0:  .file  math.cmc
+  1:  .global  pow
+  2:  .dclr  pow
+  3:  .type  pow,@function
+  4:  pushl  %ebp
+  5:   movl  %esp,%ebp
+  6:   subl  $0x00000080,%esp
+  7:   movl  8(%ebp),-4(%ebp)
+  8:   movl  12(%ebp),-8(%ebp)
+  9:   movl  $0x00000001,%eax
+ 10:   movl  %eax,-12(%ebp)
+ 11:   movl  $0x00000000,%eax
+ 12:   movl  %eax,-16(%ebp)
+ 13:   movl  -8(%ebp),%eax
+ 14:  pushl  %eax
+ 15:   movl  -16(%ebp),%eax
+ 16:   popl  %edx
+ 17:   cmpl  %edx,%eax
+ 18:     jl  %eax,3(%eip)
+ 19:   movl  $0x00000001,%eax
+ 20:   leal  2(%eip),%eip
+ 21:   movl  $0x00000000,%eax
+ 22:    jne  %eax,11(%eip)
+ 23:   movl  -12(%ebp),%eax
+ 24:  pushl  %eax
+ 25:   movl  -4(%ebp),%eax
+ 26:   popl  %edx
+ 27:   mull  %edx,%eax
+ 28:   movl  %eax,-12(%ebp)
+ 29:   movl  -16(%ebp),%eax
+ 30:    inc  %eax
+ 31:   movl  %eax,-16(%ebp)
+ 32:   leal  0x0000000d,%eip
+ 33:   movl  -12(%ebp),%eax
+ 34:  leave
+ 35:    ret
+ 36:  .global  abs
+ 37:  .dclr  abs
+ 38:  .type  abs,@function
+ 39:  pushl  %ebp
+ 40:   movl  %esp,%ebp
+ 41:   subl  $0x00000080,%esp
+ 42:   movl  8(%ebp),-4(%ebp)
+ 43:   movl  $0x00000000,%eax
+ 44:  pushl  %eax
+ 45:   movl  -4(%ebp),%eax
+ 46:   popl  %edx
+ 47:   cmpl  %edx,%eax
+ 48:     jl  %eax,3(%eip)
+ 49:   movl  $0x00000001,%eax
+ 50:   leal  2(%eip),%eip
+ 51:   movl  $0x00000000,%eax
+ 52:    jne  %eax,4(%eip)
+ 53:   movl  -4(%ebp),%eax
+ 54:    neg  %eax
+ 55:   movl  %eax,-4(%ebp)
+ 56:   movl  -4(%ebp),%eax
+ 57:  leave
+ 58:    ret

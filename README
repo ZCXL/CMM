@@ -1,0 +1,4 @@
+1.Add Path:
+	export PATH=<install path>/CMM/bin:$PATH
+2.Add CMM Library Path:
+	export CMM_LIB=<install path>/CMM/lib/ 

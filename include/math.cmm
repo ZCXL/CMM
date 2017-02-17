@@ -1,0 +1,17 @@
+/*pow*/
+int pow(int a,int b){
+	int result=1;
+	int i=0;
+	while(i<b){
+		result*=a;
+		i++;
+	}
+	return result;
+}
+/*abs*/
+int abs(int a){
+	if(a<0){
+		a=-a;
+	}
+	return a;
+}
