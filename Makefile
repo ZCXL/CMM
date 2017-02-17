@@ -1,6 +1,6 @@
 CMM_INCLUDES = $(wildcard include/*.cmm)
 
-default: build
+default: clean build
 
 clean:
 	$(MAKE) -f src/CMM/Makefile clean
